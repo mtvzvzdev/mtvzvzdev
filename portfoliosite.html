@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #EBEBEB;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Боковое меню */
+        .sidebar {
+            width: 250px;
+            min-height: 100vh;
+            background: #D0C0EB;
+            color: black;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        /* Заголовок раздела */
+        .menu-title {
+            display: block;
+            padding: 12px;
+            margin-top: 5px;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu-title:hover {
+            background: #EBEBEB;
+        }
+
+        /* Подменю */
+        .submenu {
+            display: none;
+            padding-left: 15px;
+        }
+
+        /* Ссылки в подменю */
+        .submenu a {
+            display: block;
+            padding: 8px 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .submenu a:hover {
+            color: black;
+            background: #EBEBEB;
+        }
+
+        /* Открытое подменю */
+        .menu.open .submenu {
+            display: block;
+        }
+
+        /* Основной контент */
+        .content {
+            flex: 1;
+            padding: 30px;
+        }
+
+
+        .photos {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .photos img {
+           max-width: 100%;
+          height: auto;
+          }
+
+        .photo {
+             width: 300px;
+           }
+
+         .photo2 {
+             width: 700px;
+          }
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- БОКОВОЕ МЕНЮ -->
+
+        <aside class="sidebar">
+
+            <h2>Меню</h2>
+
+            <!-- САЙТЫ -->
+
+            <div class="menu">
+
+                <div class="menu-title">
+                    Web sites
+                </div>
+
+                <div class="submenu">
+
+                    <a href="https://lpcosmeticbeauty.neocities.org/" target="_blank">
+                        Website link
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ПИСЬМА -->
+
+            <div class="menu">
+
+                <div class="menu-title">
+                    Emails
+                </div>
+
+                <div class="submenu">
+
+                    <a href="signature1.html">
+                        Email 1
+                    </a>
+
+                    <a href="code1.html">
+                        Email code
+                    </a>
+
+                    <a href="coupon.html">
+                        Email 2
+                    </a>
+
+                    <a href="code2.html">
+                        Email code
+                    </a>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+
+        <main class="content">
+
+            <h1>Hi my name is Maksim</h1>
+
+            <p>
+                Im html email developer/frontend developer
+            </p>
+<div class="photos">
+    <img src="img/test.jpg" class="photo2">
+    <img src="img/photo.jpg" class="photo">
+</div>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT ДОЛЖЕН БЫТЬ ПОСЛЕ МЕНЮ -->
+
+    <script>
+
+        const menuTitles = document.querySelectorAll('.menu-title');
+
+        menuTitles.forEach(function(title) {
+
+            title.addEventListener('click', function() {
+
+                this.parentElement.classList.toggle('open');
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
